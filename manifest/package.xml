@@ -13,6 +13,10 @@
         <name>ApexTrigger</name>
     </types>
     <types>
+        <members>adjustment__c.adjustment_status</members>
+        <name>ApprovalProcess</name>
+    </types>
+    <types>
         <members>Account.External_Id__c</members>
         <members>adjustment__c.Amount__c</members>
         <members>adjustment__c.Case__c</members>
