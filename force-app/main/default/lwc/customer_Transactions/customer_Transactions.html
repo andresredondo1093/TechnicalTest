@@ -1,0 +1,39 @@
+<template>
+    <lightning-card>
+        <lightning-button variant="brand" label="Get Customer Transaction" title="Primary action" onclick={handleClickGet} class="slds-m-left_x-small slds-m-left_medium slds-m-right_medium"></lightning-button>
+        <lightning-button variant="brand" label="Post an Adjustment" title="Primary action" onclick={handleClickPost} class="slds-m-left_x-small"></lightning-button>
+        <template iterator:it={data}>
+            <div key={it.value.Iban} class="slds-box slds-m-left_medium slds-m-right_medium slds-m-top_xx-small">
+                <lightning-layout multiple-rows key={it.value.Iban}>
+                    <lightning-layout-item size="12" large-device-size="4" padding="around-small">
+                        <b>IBAN:</b> {it.value.iban}
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" large-device-size="4" padding="around-small">
+                        <b> Account Status:</b> {it.value.accountStatus}
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" large-device-size="4" padding="around-small">
+                        <b> Product:</b> {it.value.product}
+                    </lightning-layout-item>
+                    <template iterator:it={it.value.transactions}>
+                        <lightning-layout-item key={it.value.Iban} size="12" large-device-size="4" padding="around-small">
+                            <b>Id resource:</b> {it.value.resourceId}
+                        </lightning-layout-item>
+                        <lightning-layout-item key={it.value.Iban} size="12" large-device-size="4" padding="around-small">
+                            <b>Name:</b> {it.value.name}
+                        </lightning-layout-item>
+                        <lightning-layout-item key={it.value.Iban} size="12" large-device-size="4" padding="around-small">
+                            <b>Balance Type:</b> {it.value.balanceType}
+                        </lightning-layout-item>
+                        <lightning-layout-item key={it.value.Iban} size="12" large-device-size="4" padding="around-small">
+                            <b>amount:</b> {it.value.amount.amount}&nbsp;{it.value.amount.currency}
+                        </lightning-layout-item>
+                        <lightning-layout-item key={it.value.Iban} size="12" large-device-size="4" padding="around-small">
+                            <b>Transaction date:</b> {it.value.transactionDate}
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout>
+            </div>
+        </template>
+    </lightning-card>
+    
+</template>

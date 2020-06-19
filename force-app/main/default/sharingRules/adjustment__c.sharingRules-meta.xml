@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>edit_adjustment</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>edit adjustment</label>
+        <sharedTo>
+            <group>Manager</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Pending accepted</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>read_write_pending</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>read write pending</label>
+        <sharedTo>
+            <allInternalUsers/>
+        </sharedTo>
+        <criteriaItems>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Pending accepted</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>
